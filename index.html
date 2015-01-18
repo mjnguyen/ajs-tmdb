@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="movies">
+<head>
+	<title>My Movie Database</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+</head>
+<body >
+	<div class="container">
+		<h2>Welcome!</h2>
+		<p>
+			This site was created to explore the use of AngularJS and The Movie DB API.
+		</p>
+	</div>
+	<div class="container" ng-controller="MovieListCtrl" data-ng-init="init()" >
+
+		<tabset justified="true">
+			<tab heading="Latest Movie Releases" ng-click="showPanel(0)">
+				<div ng-include="'partials/movie-panels.html'" ></div>
+			</tab>
+			<tab heading="TV Shows" ng-click="showPanel(1)">
+				<tv-panels></tv-panels>
+			</tab>
+			<tab heading="People" ng-click="showPanel(2)">
+				<person-panels></person-panels>
+			</tab>
+
+		</tabset>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js" ></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js""></script>
+
+	<script type="text/javascript" src="scripts/ui-bootstrap-tpls-0.12.0.min.js"></script>
+	<script type='text/javascript' src='scripts/ng-infinite-scroll.min.js'></script>
+	<script type="text/javascript" src="scripts/paging.js"></script>
+	<script type="text/javascript" src="scripts/movieDb.app.js"></script>
+
+	</body>
+	</html>
